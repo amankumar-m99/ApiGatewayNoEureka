@@ -15,5 +15,5 @@ spring:
              predicates:
                - Path=/service1/**
              filters:
-               - AddRequestHeader=Authorization, Bsic Json.web.token.fromYMLfile
+               - AddRequestHeader=Authorization, Basic Json.web.token.fromYMLfile
                - AddResponseHeader=process-mode, Success
