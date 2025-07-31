@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ApiGatewayDemo
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+         routes:
+           - id: service1
+             uri: http://localhost:8085
+             predicates:
+               - Path=/service1/**
+             filters:
+               - AddRequestHeader=Authorization, Bsic Json.web.token.fromYMLfile
+               - AddResponseHeader=process-mode, Success
